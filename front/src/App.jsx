@@ -17,6 +17,10 @@ export default function App() {
         <Route path="/distributions" element={<Distributions />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <footer className="footer">
+        <span><strong>Panions</strong> · association loi 1901 · récoltes en circuit court</span>
+        <span>contact@panions.fr · 06 12 34 56 78</span>
+      </footer>
     </BrowserRouter>
   );
 }

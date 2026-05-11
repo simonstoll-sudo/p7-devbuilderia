@@ -20,25 +20,32 @@ export default function Distributions() {
       .finally(() => setLoading(false));
   }, [token]);
 
-  if (loading) return <p className="loading">Chargement des distributions...</p>;
-  if (error) return <p className="error">{error}</p>;
+  if (loading) return <main className="distributions"><p className="loading">Chargement des distributions…</p></main>;
+  if (error)   return <main className="distributions"><p className="error" role="alert">{error}</p></main>;
 
   return (
     <main className="distributions">
+      <div className="distrib-chip">éspace membre</div>
       <h1>Distributions planifiées</h1>
+      <p className="subtitle">{distributions.length} date{distributions.length !== 1 ? 's' : ''} à venir.</p>
+
       {distributions.length === 0 ? (
-        <p>Aucune distribution à venir.</p>
+        <p className="empty-state">Aucune distribution à venir.</p>
       ) : (
-        <ul>
+        <div className="distrib-table">
           {distributions.map((d) => (
-            <li key={d.id}>
-              <strong>{d.panier_nom}</strong>
-              <span>{d.lieu}</span>
-              <span>{new Date(d.date_heure).toLocaleString('fr-FR')}</span>
+            <div key={d.id} className="distrib-row">
+              <span className="distrib-row__date">
+                {new Date(d.date_heure).toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'short' })}
+              </span>
+              <div className="distrib-row__info">
+                <strong>{d.panier_nom}</strong>
+                <span>{d.lieu} · {new Date(d.date_heure).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}</span>
+              </div>
               <span className={`statut statut--${d.statut}`}>{d.statut}</span>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </main>
   );
