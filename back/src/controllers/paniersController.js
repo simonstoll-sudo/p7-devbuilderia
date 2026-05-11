@@ -4,7 +4,7 @@ export function getAllPaniers(req, res) {
   try {
     const db = getDb();
     const paniers = db.prepare(`
-      SELECT id, nom, description, date_distribution, disponible, created_at
+      SELECT id, nom, description, prix, date_distribution, disponible, created_at
       FROM paniers
       ORDER BY date_distribution ASC
     `).all();
@@ -21,7 +21,7 @@ export function getPanierById(req, res) {
   try {
     const db = getDb();
     const panier = db.prepare(`
-      SELECT id, nom, description, date_distribution, disponible
+      SELECT id, nom, description, prix, date_distribution, disponible
       FROM paniers WHERE id = ?
     `).get(id);
 

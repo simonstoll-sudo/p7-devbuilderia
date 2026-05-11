@@ -22,12 +22,12 @@ async function seed() {
   ).run('membre@panions.fr', memberHash, 'member');
 
   const insertPanier = db.prepare(
-    'INSERT INTO paniers (nom, description, date_distribution, disponible) VALUES (?, ?, ?, ?)'
+    'INSERT INTO paniers (nom, description, prix, date_distribution, disponible) VALUES (?, ?, ?, ?, ?)'
   );
 
-  const p1 = insertPanier.run('Panier Printemps', 'Légumes de saison du jardin partagé', '2026-05-15', 1);
-  const p2 = insertPanier.run('Panier Été', 'Tomates, courgettes et herbes fraîches', '2026-06-12', 1);
-  const p3 = insertPanier.run('Panier Découverte', 'Assortiment de légumes oubliés', '2026-05-08', 0);
+  const p1 = insertPanier.run('Panier Printemps', 'Légumes de saison du jardin partagé', 12.50, '2026-05-15', 1);
+  const p2 = insertPanier.run('Panier Été', 'Tomates, courgettes et herbes fraîches', 15.00, '2026-06-12', 1);
+  const p3 = insertPanier.run('Panier Découverte', 'Assortiment de légumes oubliés', 10.00, '2026-05-08', 0);
 
   const insertContenu = db.prepare(
     'INSERT INTO contenus (panier_id, legume, quantite, unite) VALUES (?, ?, ?, ?)'

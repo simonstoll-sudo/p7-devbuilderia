@@ -31,6 +31,7 @@ function initSchema(db) {
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       nom TEXT NOT NULL,
       description TEXT,
+      prix REAL,
       date_distribution DATE NOT NULL,
       disponible INTEGER NOT NULL DEFAULT 1,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP

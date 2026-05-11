@@ -14,6 +14,7 @@ export default function Navbar() {
       <Link to="/" className="navbar__logo">Panions 🌱</Link>
       <ul className="navbar__links">
         <li><Link to="/">Paniers</Link></li>
+        <li><Link to="/about">À propos</Link></li>
         {token ? (
           <>
             <li><Link to="/distributions">Distributions</Link></li>

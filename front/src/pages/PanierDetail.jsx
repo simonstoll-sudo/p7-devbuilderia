@@ -24,9 +24,13 @@ export default function PanierDetail() {
       <Link to="/" className="back-link">← Retour aux paniers</Link>
       <h1>{panier.nom}</h1>
       <p className="description">{panier.description}</p>
+      <p className="prix detail-prix">{panier.prix != null ? `${panier.prix.toFixed(2)} €` : '—'}</p>
       <p className="date">
         Distribution le {new Date(panier.date_distribution).toLocaleDateString('fr-FR')}
       </p>
+      <span className={`badge badge--${panier.disponible ? 'disponible' : 'indisponible'}`}>
+        {panier.disponible ? 'Disponible' : 'Complet'}
+      </span>
       <section className="contenus">
         <h2>Contenu du panier</h2>
         <ul>

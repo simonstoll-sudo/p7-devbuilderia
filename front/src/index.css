@@ -30,6 +30,78 @@ h2 { font-size: 1.25rem; margin-bottom: 1rem; }
   color: #b91c1c;
 }
 
+/* Info banner */
+.info-banner {
+  background-color: #f0fdf4;
+  border-bottom: 1px solid #bbf7d0;
+  padding: 0.75rem 2rem;
+  font-size: 0.9rem;
+  color: #166534;
+}
+
+.info-banner a {
+  color: #15803d;
+  font-weight: 600;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.9rem;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  font-size: 0.875rem;
+  cursor: pointer;
+  color: #374151;
+}
+
+.filter-btn--active {
+  background-color: #16a34a;
+  border-color: #16a34a;
+  color: #ffffff;
+}
+
+/* Prix */
+.prix {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #16a34a;
+}
+
+.detail-prix {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Empty state */
+.empty-state {
+  color: #6b7280;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+/* About */
+.about section {
+  margin-bottom: 2rem;
+}
+
+.about address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about address a {
+  color: #16a34a;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
